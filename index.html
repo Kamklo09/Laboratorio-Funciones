@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Funciones</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <h1 class="titulo">Clasificador de Funciones</h1>
+        <p class="subtitulo">Función Lineal y Función Afín · f(x) = bx + c</p>
+
+        <!-- Identificación -->
+        <section class="identificacion">
+            <p><strong>Estudiante:</strong> Camilo Mori</p>
+            <p><strong>Curso:</strong> III°B</p>
+            <p><strong>Fecha:</strong> 18-11-2026</p>
+        </section>
+
+        <!-- Coeficientes -->
+        <div class="caja-coeficiente">
+            <span>b = </span>
+            <strong id="valorB">Random (-10 a 10)</strong>
+        </div>
+
+        <div class="caja-coeficiente">
+            <span>c = </span>
+            <strong id="valorC">Random (-10 a 10)</strong>
+        </div>
+
+        <!-- Botón para generar valores -->
+        <button id="botonGenerar" class="boton-generar">
+            Generar / Cambiar
+        </button>
+
+        <!-- Función generada y clasificación -->
+        <p id="funcionGenerada" class="funcion-generada">
+            Presiona el botón para generar una función
+        </p>
+
+        <p id="clasificacion" class="clasificacion">
+            Clasificación: todavía no hay una función generada
+        </p>
+
+        <!-- Caja de Función Lineal -->
+        <section id="cajaLineal" class="caja-clasificacion">
+
+            <h2 class="titulo-caja">LINEAL</h2>
+
+            <p class="condicion">
+                Función Lineal (F.L.) · Condición: c = 0 · Expresión: f(x) = bx
+            </p>
+
+            <p id="mensajeLineal" class="mensaje-espera">
+                Muestra las propiedades de la Función Lineal si cumple la condición (c = 0).
+            </p>
+
+            <ul id="listaLineal" class="lista-propiedades oculto">
+                <li>
+                    <strong>Gráfica:</strong>
+                    Línea recta continua.
+                </li>
+
+                <li>
+                    <strong>Paso obligatorio:</strong>
+                    Pasa por el origen de coordenadas (0, 0).
+                </li>
+
+                <li>
+                    <strong>Pendiente (b):</strong>
+                    <span id="pendienteLineal"></span>
+                </li>
+            </ul>
+
+        </section>
+
+        <!-- Caja de Función Afín -->
+        <section id="cajaAfin" class="caja-clasificacion">
+
+            <h2 class="titulo-caja">AFÍN</h2>
+
+            <p class="condicion">
+                Función Afín (F.A.) · Condición: c ≠ 0 · Expresión: f(x) = bx + c
+            </p>
+
+            <p id="mensajeAfin" class="mensaje-espera">
+                Muestra las propiedades de la Función Afín si cumple la condición (c ≠ 0).
+            </p>
+
+            <ul id="listaAfin" class="lista-propiedades oculto">
+
+                <li>
+                    <strong>Gráfica:</strong>
+                    Línea recta que no pasa por el origen.
+                </li>
+
+                <li>
+                    <strong>Corte con el eje Y:</strong>
+                    Interseca al eje Y en las coordenadas (0, <span id="corteEjeY"></span>).
+                </li>
+
+                <li>
+                    <strong>Inclinación:</strong>
+                    Regulada por el valor del coeficiente de pendiente b.
+                    <span id="pendienteAfin"></span>
+                </li>
+
+                <li>
+                    <strong>Traslación:</strong>
+                    Es una traslación vertical de la función lineal
+                    <span id="funcionBase"></span> en
+                    <span id="unidadesTraslacion"></span> unidades.
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- GeoGebra y archivo .ggb -->
+        <section class="seccion-geogebra">
+
+            <p>
+                <strong>ENLACE:</strong>
+                GeoGebra Clásico
+                (<a class="link" href="https://www.geogebra.org/classic" target="_blank" rel="noopener">geogebra.org/classic</a>)
+            </p>
+
+            <p>
+                <strong>ACCIÓN:</strong>
+                Subir / Guardar archivo <strong>.ggb</strong> a GitHub
+            </p>
+
+            <p>
+                <a class="link" href="https://github.com/Kamklo09/Laboratorio-Funciones" target="_blank" rel="noopener">
+                    Subir el archivo .ggb a mi repositorio de GitHub
+                </a>
+            </p>
+
+            <p>
+                <a class="link" href="funcion.ggb" download>
+                    Descargar el archivo .ggb guardado en esta página
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
