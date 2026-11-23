@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Funciones</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="main-box">
+        <!-- Encabezado principal -->
+        <header class="encabezado">
+            <h1 class="titulo-main">Clasificador de Funciones</h1>
+            <p class="subtitulo">Función Lineal, Afín y Constante · f(x) = mx + n</p>
+        </header>
+        <!-- Información del estudiante -->
+        <section class="info-alumno" aria-label="Datos del estudiante">
+            <p><strong>Estudiante:</strong> Camilo Mori</p>
+            <p><strong>Curso:</strong> III°B</p>
+            <p><strong>Fecha:</strong> 18-11-2026</p>
+        </section>
+        <!-- Zona de números aleatorios -->
+        <section class="zona-numeros" aria-label="Coeficientes">
+            <div class="cuadro">
+                <span>m = </span>
+                <strong id="valorM">Random (-3 a 3)</strong>
+            </div>
+
+            <div class="cuadro">
+                <span>n = </span>
+                <strong id="valorN">Random (-3 a 3)</strong>
+            </div>
+        </section>
+        <!-- Botón para generar la función -->
+        <button id="btnGenerar" class="btn-generar" type="button">
+            Generar / Cambiar
+        </button>
+
+        <section class="resultado" aria-label="Resultado">
+            <p id="funcionGenerada" class="texto-funcion">
+                Presiona el botón para generar una función
+            </p>
+
+            <p id="clasificacion" class="texto-clasificacion">
+                Clasificación: todavía no hay una función generada
+            </p>
+        </section>
+        <!-- Zona de gráfica de GeoGebra -->
+        <section class="zona-grafica" aria-label="Gráfica en GeoGebra">
+            <h2 class="titulo-ficha">GRÁFICA EN GEOGEBRA</h2>
+            <div id="ggb-element"></div>
+        </section>
+
+        <!-- Fichas de clasificación -->
+        <section id="cajaLineal" class="ficha">
+            <!-- Ficha para la Función Lineal -->
+            <h2 class="titulo-ficha">LINEAL</h2>
+
+            <p class="regla">
+                Función Lineal (F.L.) · Condición: m ≠ 0 y n = 0 · Expresión: f(x) = mx
+            </p>
+
+            <p id="mensajeLineal" class="aviso">
+                Muestra las propiedades de la Función Lineal si cumple la condición (m ≠ 0 y n = 0).
+            </p>
+
+            <ul id="listaLineal" class="lista">
+                <li><strong>Gráfica:</strong> Línea recta continua inclinada.</li>
+                <li><strong>Paso obligatorio:</strong> Pasa por el origen de coordenadas (0, 0).</li>
+                <li><strong>Pendiente (m):</strong> <span id="pendienteLineal"></span></li>
+            </ul>
+        </section>
+
+        <section id="cajaAfin" class="ficha">
+            <!-- Ficha para la Función Afín -->
+            <h2 class="titulo-ficha">AFÍN</h2>
+
+            <p class="regla">
+                Función Afín (F.A.) · Condición: m ≠ 0 y n ≠ 0 · Expresión: f(x) = mx + n
+            </p>
+
+            <p id="mensajeAfin" class="aviso">
+                Muestra las propiedades de la Función Afín si cumple la condición (m ≠ 0 y n ≠ 0).
+            </p>
+
+            <ul id="listaAfin" class="lista">
+                <li><strong>Gráfica:</strong> Línea recta inclinada que no pasa por el origen.</li>
+                <li>
+                    <strong>Corte con el eje Y:</strong> Interseca al eje Y en las coordenadas (0, <span
+                        id="corteEjeY"></span>).
+                </li>
+                <li>
+                    <strong>Inclinación:</strong> Regulada por el valor de la pendiente m.
+                    <span id="pendienteAfin"></span>
+                </li>
+                <li>
+                    <strong>Traslación:</strong> Es una traslación vertical de la función lineal
+                    <span id="funcionBase"></span> en <span id="unidadesTraslacion"></span> unidades.
+                </li>
+            </ul>
+        </section>
+
+        <section id="cajaConstante" class="ficha">
+            <!-- Ficha para la Función Constante -->
+            <h2 class="titulo-ficha">CONSTANTE</h2>
+
+            <p class="regla">
+                Función Constante (F.C.) · Condición: m = 0 y n ≠ 0 · Expresión: f(x) = n
+            </p>
+
+            <p id="mensajeConstante" class="aviso">
+                Muestra las propiedades de la Función Constante si cumple la condición (m = 0 y n ≠ 0).
+            </p>
+
+            <ul id="listaConstante" class="lista">
+                <li><strong>Gráfica:</strong> Línea recta completamente horizontal (paralela al eje X).</li>
+                <li><strong>Pendiente (m):</strong> Es igual a 0, por lo que no crece ni decrece.</li>
+                <li>
+                    <strong>Corte con el eje Y:</strong> Interseca al eje Y en (0, <span
+                        id="corteEjeYConstante"></span>).
+                </li>
+            </ul>
+        </section>
+
+        <section id="cajaSinFuncion" class="ficha">
+            <!-- Ficha para la Función Nula -->
+            <h2 class="titulo-ficha">FUNCIÓN NULA (SIN PENDIENTE NI TRASLACIÓN)</h2>
+
+            <p class="regla">
+                Condición: m = 0 y n = 0 · Expresión: f(x) = 0
+            </p>
+
+            <p id="mensajeSinFuncion" class="aviso">
+                Se activa si ambos valores salen 0 (m = 0 y n = 0).
+            </p>
+
+            <ul id="listaSinFuncion" class="lista">
+                <li><strong>Gráfica:</strong> Línea horizontal que coincide exactamente con todo el eje X.</li>
+                <li>
+                    <strong>Observación:</strong> Al ser m = 0 y n = 0, todos los valores de x dan como resultado 0.
+                </li>
+            </ul>
+        </section>
+        <!--Pie de página con enlaces a geogebra y github-->
+        <footer class="footersito">
+            <p>
+                <strong>ENLACE:</strong> GeoGebra Clásico
+                (<a class="link" href="https://geogebra.org" target="_blank">geogebra.org/classic</a>)
+            </p>
+
+            <p>
+                <strong>ACCIÓN:</strong> Subir / Guardar archivo <strong>.ggb</strong> a GitHub
+            </p>
+
+            <p>
+                <a class="link" href="https://github.com/Kamklo09/Laboratorio-Funciones" target="_blank">
+                    Subir el archivo .ggb a mi repositorio de GitHub
+                </a>
+            </p>
+
+            <p>
+                <a class="link" href="funcion.ggb" download>
+                    Descargar el archivo .ggb guardado en esta página
+                </a>
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

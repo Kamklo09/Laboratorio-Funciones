@@ -1,0 +1,172 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #b8d0d8;
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+}
+
+.main-box {
+    width: auto;
+    padding: 20px;
+    background-color: #fff0ff;
+}
+
+.encabezado {
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: #7f4ca5;
+    border: 2px solid #214e63;
+}
+
+.titulo-main {
+    margin-top: 0px;
+    margin-bottom: 4px;
+    text-align: center;
+    font-size: 28px;
+    color: #102a43;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 15px;
+    color: #243b53;
+}
+
+.info-alumno {
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    background-color: #b57edc;
+    border: 2px solid #2b6cb0;
+    font-size: 14px;
+    color: #1a365d;
+}
+
+.info-alumno p {
+    margin: 4px 0px;
+}
+
+.zona-numeros {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.cuadro {
+    display: inline-block;
+    width: 240px;
+    padding: 12px;
+    margin: 6px;
+    background-color: #4b1c71;
+    border: 2px solid #2a5c66;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+.btn-generar {
+    display: block;
+    width: 320px;
+    padding: 12px;
+    margin: 0px auto 18px auto;
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #dbb6ee;
+    border: 2px solid #1e325c;
+    cursor: pointer;
+}
+
+.btn-generar:hover {
+    background-color: #ab3df5;
+}
+
+.resultado {
+    padding: 14px;
+    margin-bottom: 18px;
+    background-color: #b57edc;
+    border: 2px solid #2d6a4f;
+    text-align: center;
+}
+
+.texto-funcion {
+    margin-bottom: 8px;
+    font-size: 21px;
+    font-weight: bold;
+    color: #102a43;
+}
+
+.texto-clasificacion {
+    font-size: 15px;
+    font-weight: bold;
+    color: #2c5282;
+}
+
+.zona-grafica {
+    padding: 14px;
+    margin-bottom: 18px;
+    background-color: #ffffff;
+    border: 2px solid #214e63;
+    text-align: center;
+}
+
+#ggb-element {
+    width: 546px;
+    margin: 10px auto 0px auto;
+}
+
+.ficha {
+    padding: 14px;
+    margin-bottom: 14px;
+    background-color: #dbb6ee;
+    border: 2px solid #6b8cae;
+}
+
+.ficha.activa {
+    background-color: #90e0ef;
+    border: 2px solid #0077b6;
+}
+
+.titulo-ficha {
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #1d3557;
+}
+
+.regla {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2b4c7e;
+}
+
+.aviso {
+    font-size: 14px;
+    color: #4a607a;
+}
+
+.lista {
+    margin-top: 8px;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.lista li {
+    margin-bottom: 6px;
+}
+
+.footersito {
+    margin-top: 18px;
+    padding: 14px;
+    background-color: #eacffc;
+    border-top: 2px solid #214e63;
+    font-size: 14px;
+    color: #16262e;
+}
+
+.footersito p {
+    margin: 6px 0px;
+}
+
+.link {
+    color: #0b3c5d;
+    font-weight: bold;
+}
